@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Design - CIS3344</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/1b8f9626df.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="nav-img">
+            <img src="img/Temple_University.png" style="width: 50px; height: 50px; padding-left: 5px" />
+        </div>
+        <div id="nav-group">
+            <div id="menu-btn">
+                <img id="menu-icon" src="img/menu-icon.png" alt="Menu Icon" />
+            </div>
+
+            <ul class="nav">
+                <li><a href="http://cis-iis2.temple.edu/Spring2017/CIS3344_tuf15947/Lab1/index.html" target="_blank">CIS 3344 Index</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#info">Information</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="wrapper" id="home">
+        <div class="content-middle">
+            <h1 class="text-center big">Temple University</h1>
+            <p class="text-center">This page is dedicated to helping you learn more about Temple University to make your college choice decision easier.</p>
+            <a href="#info"><div class="custom-btn">Learn More</div></a>
+        </div>
+    </div>
+
+    <div class="section" id="info">
+        <div class="container">
+            <h1 class="big text-center">So... why the Cherry and White?</h1>
+
+            <div class="container-part">
+                <i class="fa fa-5x fa-graduation-cap" aria-hidden="true"></i>
+                <h2>Choices</h2>
+                <p>Few universities can match the wide range of educational choices that Temple boasts. Each of our 17 schools and colleges offers an abundance of courses and majors to inspire and challenge you.</p>
+            </div>
+
+            <div class="container-part">
+                <i class="fa fa-5x fa-book" aria-hidden="true"></i>
+                <h2>Facilities</h2>
+                <p>Together Temples’ libraries hold more than four million bound volume equivalents, care for thousands of special collections of rare books and primary archival sources and provide a full range of services for faculty, students and community members.</p>
+            </div>
+
+            <div class="container-part">
+                <i class="fa fa-5x fa-globe" aria-hidden="true"></i>
+                <h2>Worldwide Reach</h2>
+                <p>Promoting globalization is one of Temple’s core values. The Office of International Affairs brings together various constituencies and units, working to integrate a global perspective throughout Temple’s academic and co-curricular programs.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+        <div class="container" style="text-align: center">
+            <h1 class="big" style="color: black">Interested? We'd like to ask you some questions.</h1>
+            <form id="frmContact" name="frmContact" method="post" action="http://www.temple.edu/cgi-bin/mail?tuf15947@temple.edu">
+                Name: <input type="text" name="txtUsername" required /><br /><br />
+                Email: <input name="txtEmail" type="email" required /><br /><br />
+                How did you find out about this website? (datalist)<br />
+                <datalist id="lstOptions">
+                    <option value="CIS3344" label="CIS3344"></option>
+                    <option value="Ryan" label="Ryan"></option>
+                    <option value="Other" label="Other"></option>
+                </datalist>
+                <input name="txtFoundOut" type="text" list="lstOptions" required /><br /><br />
+                I am a..<br />
+                <input type="radio" name="level" value="High-school senior" required> HS Senior<br>
+                <input type="radio" name="level" value="Transfer student" required> Transfer<br>
+                <input type="radio" name="level" value="Other" required> Other <br /><br />
+                Tell us a bit about yourself<br />
+                <textarea rows="4" cols="50" name="aboutyou"></textarea><br /><br />
+
+                Did this website help you choose Temple?<br />
+                <input type="radio" name="choice" value="Yes" />Yes <br />
+                <input type="radio" name="choice" value="No" />No<br /><br />
+
+                What can be added to this website? Check all that apply: <br />
+                <input type="checkbox" name="cbchoice1" value="MoreFacts" />More facts<br />
+                <input type="checkbox" name="cbchoice1" value="MoreColors" />More colors<br />
+                <input type="checkbox" name="cbchoice1" value="MoreChoices" />More academic degrees<br />
+                <input type="checkbox" name="cbchoice1" value="ItIsGood" />It's good the way it is<br /><br />
+
+                Is this website responsive? Why?<br />
+                <textarea rows="4" cols="50" name="isthisresponsive"></textarea><br /><br />
+
+                To make sure you were paying attention, how many colleges and schools are there?<br />
+                <input type="radio" name="amount" value="14" required> 14<br>
+                <input type="radio" name="amount" value="20" required> 20<br>
+                <input type="radio" name="amount" value="17" required> 17 <br /><br />
+
+                How many bound volume equivalents of books does Temple hold in its libraries?<br />
+                <input type="radio" name="amount" value="fourmillion" required> 4 million<br>
+                <input type="radio" name="amount" value="twentymillion" required> 20 million<br>
+                <input type="radio" name="amount" value="sevenmillion" required> 7 million <br /><br />
+                <input type="submit" value="Submit" /><br />
+
+            </form>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="footer">
+        © 2017 Ryan Snitcher
+    </div>
+
+    <script>
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#menu-btn').click(function () {
+                $(this).next().toggle();
+            });
+        });
+
+        $(window).resize(function () {
+            if ($(window).width() > 900)
+                $('.nav').css("display", "block");
+            else
+                $('.nav').css("display", "none");
+        });
+    </script>
+</body>
+</html>
